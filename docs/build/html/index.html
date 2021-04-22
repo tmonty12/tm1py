@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TM1py Documentation &#8212; TM1py 1.0.2 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TM1py.Exceptions package" href="TM1py.Exceptions.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tm1py-documentation">
+<h1>TM1py Documentation<a class="headerlink" href="#tm1py-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-TM1py">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-TM1py" title="Permalink to this headline">¶</a></h2>
+<p>A python module for TM1.</p>
+<p><a class="reference external" href="https://github.com/cubewise-code/TM1py">https://github.com/cubewise-code/TM1py</a></p>
+<p>TM1py wraps the TM1 REST API into concise Python classes and Services that simplify TM1 interactions from python.</p>
+<p>Usage:
+&gt;&gt;&gt; with RestService(address=’’, port=8001, user=’admin’, password=’apple’, ssl=False) as tm1_rest:
+&gt;&gt;&gt;     subset_service = SubsetService(tm1_rest)
+&gt;&gt;&gt;     subset = Subset(dimension_name=’Month’, subset_name=’Q1’, elements=[‘Jan’, ‘Feb’, ‘Mar’])
+&gt;&gt;&gt;     subset_service.create(subset, private=True)</p>
+</div>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Exceptions.html">TM1py.Exceptions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Exceptions.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Exceptions.html#module-TM1py.Exceptions.Exceptions">TM1py.Exceptions.Exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Exceptions.html#module-TM1py.Exceptions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Objects.html">TM1py.Objects package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Annotation">TM1py.Objects.Annotation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Application">TM1py.Objects.Application module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Axis">TM1py.Objects.Axis module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Chore">TM1py.Objects.Chore module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.ChoreFrequency">TM1py.Objects.ChoreFrequency module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.ChoreStartTime">TM1py.Objects.ChoreStartTime module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.ChoreTask">TM1py.Objects.ChoreTask module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Cube">TM1py.Objects.Cube module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Dimension">TM1py.Objects.Dimension module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Element">TM1py.Objects.Element module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.ElementAttribute">TM1py.Objects.ElementAttribute module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Hierarchy">TM1py.Objects.Hierarchy module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.MDXView">TM1py.Objects.MDXView module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.NativeView">TM1py.Objects.NativeView module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Process">TM1py.Objects.Process module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Rules">TM1py.Objects.Rules module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Server">TM1py.Objects.Server module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.Subset">TM1py.Objects.Subset module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.TM1Object">TM1py.Objects.TM1Object module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.User">TM1py.Objects.User module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects.View">TM1py.Objects.View module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Objects.html#module-TM1py.Objects">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Services.html">TM1py.Services package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.AnnotationService">TM1py.Services.AnnotationService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.ApplicationService">TM1py.Services.ApplicationService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.CellService">TM1py.Services.CellService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.ChoreService">TM1py.Services.ChoreService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.CubeService">TM1py.Services.CubeService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.DimensionService">TM1py.Services.DimensionService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.ElementService">TM1py.Services.ElementService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.HierarchyService">TM1py.Services.HierarchyService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.MonitoringService">TM1py.Services.MonitoringService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.ObjectService">TM1py.Services.ObjectService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.ProcessService">TM1py.Services.ProcessService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#tm1py-services-restservice-module">TM1py.Services.RESTService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.SecurityService">TM1py.Services.SecurityService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.ServerService">TM1py.Services.ServerService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.SubsetService">TM1py.Services.SubsetService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.TM1Service">TM1py.Services.TM1Service module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services.ViewService">TM1py.Services.ViewService module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Services.html#module-TM1py.Services">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Utils.html">TM1py.Utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Utils.html#module-TM1py.Utils.MDXUtils">TM1py.Utils.MDXUtils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Utils.html#tm1py-utils-tiobfuscator-module">TM1py.Utils.TIObfuscator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Utils.html#module-TM1py.Utils.Utils">TM1py.Utils.Utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TM1py.Utils.html#module-TM1py.Utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">TM1py</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Exceptions.html">TM1py.Exceptions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Objects.html">TM1py.Objects package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Services.html">TM1py.Services package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Utils.html">TM1py.Utils package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="TM1py.Exceptions.html" title="next chapter">TM1py.Exceptions package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Marius Wirtz, Cubewise CODE.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

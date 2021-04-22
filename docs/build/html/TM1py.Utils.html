@@ -1,0 +1,807 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TM1py.Utils package &#8212; TM1py 1.0.2 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="TM1py.Services package" href="TM1py.Services.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tm1py-utils-package">
+<h1>TM1py.Utils package<a class="headerlink" href="#tm1py-utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-TM1py.Utils.MDXUtils">
+<span id="tm1py-utils-mdxutils-module"></span><h2>TM1py.Utils.MDXUtils module<a class="headerlink" href="#module-TM1py.Utils.MDXUtils" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="TM1py.Utils.MDXUtils.DimensionSelection">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Utils.MDXUtils.</span></code><code class="sig-name descname"><span class="pre">DimensionSelection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.DimensionSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Instances of this class to be passed to construct_mdx function</p>
+<dl class="py attribute">
+<dt id="TM1py.Utils.MDXUtils.DimensionSelection.EXPRESSION">
+<code class="sig-name descname"><span class="pre">EXPRESSION</span></code><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#TM1py.Utils.MDXUtils.DimensionSelection.EXPRESSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.MDXUtils.DimensionSelection.ITERABLE">
+<code class="sig-name descname"><span class="pre">ITERABLE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#TM1py.Utils.MDXUtils.DimensionSelection.ITERABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.MDXUtils.DimensionSelection.SUBSET">
+<code class="sig-name descname"><span class="pre">SUBSET</span></code><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#TM1py.Utils.MDXUtils.DimensionSelection.SUBSET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="TM1py.Utils.MDXUtils.DimensionSelection.determine_selection_type">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">determine_selection_type</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.DimensionSelection.determine_selection_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.MDXUtils.construct_mdx">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.MDXUtils.</span></code><code class="sig-name descname"><span class="pre">construct_mdx</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cube_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contexts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.construct_mdx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to construct MDX Query from different dimension selection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cube_name</strong> – Name of the Cube</p></li>
+<li><p><strong>rows</strong> – List of DimensionSelections</p></li>
+<li><p><strong>columns</strong> – List of DimensionSelections</p></li>
+<li><p><strong>contexts</strong> – Dictionary of Dimensions and Elements</p></li>
+<li><p><strong>suppress</strong> – “Both”, “Rows”, “Columns” or None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Generated MDX Query</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.MDXUtils.construct_mdx_axis">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.MDXUtils.</span></code><code class="sig-name descname"><span class="pre">construct_mdx_axis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_selections</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.construct_mdx_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct MDX for one Axis (Row or Column).
+Can have multiple dimensions stacked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim_selections</strong> – instances of TM1py.Utils.MDXUtils.DimensionSelection</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a valid MDX for an Axis</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.MDXUtils.curly_braces">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.MDXUtils.</span></code><code class="sig-name descname"><span class="pre">curly_braces</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.curly_braces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Put curly braces around a string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expression</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.MDXUtils.read_cube_name_from_mdx">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.MDXUtils.</span></code><code class="sig-name descname"><span class="pre">read_cube_name_from_mdx</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.read_cube_name_from_mdx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the cube name from a valid MDX Query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mdx</strong> – The MDX Query as String</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>String, name of a cube</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.MDXUtils.read_dimension_composition_from_mdx">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.MDXUtils.</span></code><code class="sig-name descname"><span class="pre">read_dimension_composition_from_mdx</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.read_dimension_composition_from_mdx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a valid MDX Query and return the name of the cube and a list of dimensions for each axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mdx</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.MDXUtils.read_dimension_composition_from_mdx_set">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.MDXUtils.</span></code><code class="sig-name descname"><span class="pre">read_dimension_composition_from_mdx_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.read_dimension_composition_from_mdx_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.MDXUtils.read_dimension_composition_from_mdx_set_or_tuple">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.MDXUtils.</span></code><code class="sig-name descname"><span class="pre">read_dimension_composition_from_mdx_set_or_tuple</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.read_dimension_composition_from_mdx_set_or_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.MDXUtils.read_dimension_composition_from_mdx_tuple">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.MDXUtils.</span></code><code class="sig-name descname"><span class="pre">read_dimension_composition_from_mdx_tuple</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.read_dimension_composition_from_mdx_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.MDXUtils.split_mdx">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.MDXUtils.</span></code><code class="sig-name descname"><span class="pre">split_mdx</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.MDXUtils.split_mdx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="tm1py-utils-tiobfuscator-module">
+<h2>TM1py.Utils.TIObfuscator module<a class="headerlink" href="#tm1py-utils-tiobfuscator-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-TM1py.Utils.Utils">
+<span id="tm1py-utils-utils-module"></span><h2>TM1py.Utils.Utils module<a class="headerlink" href="#module-TM1py.Utils.Utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveDict">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">CaseAndSpaceInsensitiveDict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.MutableMapping</span></code></p>
+<p>A case-and-space-insensitive dict-like object with String keys.
+Implements all methods and operations of
+<code class="docutils literal notranslate"><span class="pre">collections.abc.MutableMapping</span></code> as well as dict’s <code class="docutils literal notranslate"><span class="pre">copy</span></code>. Also
+provides <code class="docutils literal notranslate"><span class="pre">adjusted_items</span></code>, <code class="docutils literal notranslate"><span class="pre">adjusted_keys</span></code>.
+All keys are expected to be strings. The structure remembers the
+case of the last key to be set, and <code class="docutils literal notranslate"><span class="pre">iter(instance)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">items()</span></code>, <code class="docutils literal notranslate"><span class="pre">iterkeys()</span></code>, and <code class="docutils literal notranslate"><span class="pre">iteritems()</span></code>
+will contain case-sensitive keys.
+However, querying and contains testing is case insensitive:</p>
+<blockquote>
+<div><p>elements = TM1pyElementsDictionary()
+elements[‘Travel Expenses’] = 100
+elements[‘travelexpenses’] == 100 # True</p>
+</div></blockquote>
+<p>Entries are ordered</p>
+<dl class="py method">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveDict.adjusted_items">
+<code class="sig-name descname"><span class="pre">adjusted_items</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Generator</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveDict.adjusted_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like iteritems(), but with all adjusted keys.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveDict.adjusted_keys">
+<code class="sig-name descname"><span class="pre">adjusted_keys</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Generator</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveDict.adjusted_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like keys(), but with all adjusted keys.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveDict.copy">
+<code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveSet">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">CaseAndSpaceInsensitiveSet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.MutableSet</span></code></p>
+<dl class="py method">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveSet.add">
+<code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveSet.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveSet.copy">
+<code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveSet.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveSet.discard">
+<code class="sig-name descname"><span class="pre">discard</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveSet.discard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove an element.  Do not raise an exception if absent.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">CaseAndSpaceInsensitiveTuplesDict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.MutableMapping</span></code></p>
+<p>A case-and-space-insensitive dict-like object with String-Tuples Keys.
+Implements all methods and operations of
+<code class="docutils literal notranslate"><span class="pre">collections.abc.MutableMapping</span></code> as well as dict’s <code class="docutils literal notranslate"><span class="pre">copy</span></code>. Also
+provides <code class="docutils literal notranslate"><span class="pre">adjusted_items</span></code>, <code class="docutils literal notranslate"><span class="pre">adjusted_keys</span></code>.
+All keys are expected to be tuples of strings. The structure remembers the
+case of the last key to be set, and <code class="docutils literal notranslate"><span class="pre">iter(instance)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">items()</span></code>, <code class="docutils literal notranslate"><span class="pre">iterkeys()</span></code>, and <code class="docutils literal notranslate"><span class="pre">iteritems()</span></code>
+will contain case-sensitive keys.
+However, querying and contains testing is case insensitive:</p>
+<blockquote>
+<div><p>data = CaseAndSpaceInsensitiveTuplesDict()
+data[(‘[Business Unit].[UK]’, ‘[Scenario].[Worst Case]’)] = 1000
+data[(‘[BusinessUnit].[UK]’, ‘[Scenario].[worstcase]’)] == 1000 # True
+data[(‘[Business Unit].[UK]’, ‘[Scenario].[Worst Case]’)] == 1000 # True</p>
+</div></blockquote>
+<p>Entries are ordered</p>
+<dl class="py method">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict.adjusted_items">
+<code class="sig-name descname"><span class="pre">adjusted_items</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict.adjusted_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like iteritems(), but with all adjusted keys.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict.adjusted_keys">
+<code class="sig-name descname"><span class="pre">adjusted_keys</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict.adjusted_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like keys(), but with all adjusted keys.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict.copy">
+<code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">CellUpdateableProperty</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty.CELL_IS_NOT_UPDATEABLE">
+<code class="sig-name descname"><span class="pre">CELL_IS_NOT_UPDATEABLE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">29</span></em><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty.CELL_IS_NOT_UPDATEABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty.CONSOLIDATION_SPREADING_HOLD">
+<code class="sig-name descname"><span class="pre">CONSOLIDATION_SPREADING_HOLD</span></code><em class="property"> <span class="pre">=</span> <span class="pre">11</span></em><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty.CONSOLIDATION_SPREADING_HOLD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty.LEAF_HOLD">
+<code class="sig-name descname"><span class="pre">LEAF_HOLD</span></code><em class="property"> <span class="pre">=</span> <span class="pre">10</span></em><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty.LEAF_HOLD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty.NO_SPREADING_HOLD">
+<code class="sig-name descname"><span class="pre">NO_SPREADING_HOLD</span></code><em class="property"> <span class="pre">=</span> <span class="pre">9</span></em><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty.NO_SPREADING_HOLD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty.PICKLIST_EXISTS">
+<code class="sig-name descname"><span class="pre">PICKLIST_EXISTS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty.PICKLIST_EXISTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty.RULE_IS_APPLIED">
+<code class="sig-name descname"><span class="pre">RULE_IS_APPLIED</span></code><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty.RULE_IS_APPLIED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty.SANDBOX_VALUE_IS_DIFFERENT_TO_BASE">
+<code class="sig-name descname"><span class="pre">SANDBOX_VALUE_IS_DIFFERENT_TO_BASE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">5</span></em><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty.SANDBOX_VALUE_IS_DIFFERENT_TO_BASE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty.SECURITY_RESTRICTED">
+<code class="sig-name descname"><span class="pre">SECURITY_RESTRICTED</span></code><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty.SECURITY_RESTRICTED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty.TEMPORARY_SPREADING_HOLD">
+<code class="sig-name descname"><span class="pre">TEMPORARY_SPREADING_HOLD</span></code><em class="property"> <span class="pre">=</span> <span class="pre">12</span></em><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty.TEMPORARY_SPREADING_HOLD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="TM1py.Utils.Utils.CellUpdateableProperty.UPDATE_CUBE_APPLICABLE">
+<code class="sig-name descname"><span class="pre">UPDATE_CUBE_APPLICABLE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#TM1py.Utils.Utils.CellUpdateableProperty.UPDATE_CUBE_APPLICABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.abbreviate_mdx">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">abbreviate_mdx</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.abbreviate_mdx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.add_url_parameters">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">add_url_parameters</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.add_url_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append parameters to url string passed in kwargs
+:param url: str
+:param kwargs: key:value pairs of url parameters. For example, {‘$select’:’Name’}
+:return: str</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.build_cellset_from_pandas_dataframe">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">build_cellset_from_pandas_dataframe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict" title="TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict"><span class="pre">TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict</span></a><a class="headerlink" href="#TM1py.Utils.Utils.build_cellset_from_pandas_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – a Pandas Dataframe, with dimension-column mapping in correct order. As created in build_pandas_dataframe_from_cellset</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a CaseAndSpaceInsensitiveTuplesDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.build_content_from_cellset_dict">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">build_content_from_cellset_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_cellset_as_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict" title="TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict"><span class="pre">TM1py.Utils.Utils.CaseAndSpaceInsensitiveTuplesDict</span></a><a class="headerlink" href="#TM1py.Utils.Utils.build_content_from_cellset_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>transform raw cellset data into concise dictionary
+:param raw_cellset_as_dict:
+:param top: Int, number of cells to return (counting from top)
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.build_csv_from_cellset_dict">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">build_csv_from_cellset_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_dimensions</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_dimensions</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_cellset_as_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_separator</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'\r\n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_separator</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">','</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_attributes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.build_csv_from_cellset_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>transform raw cellset data into concise dictionary
+:param column_dimensions:
+:param row_dimensions:
+:param raw_cellset_as_dict:
+:param top: Maximum Number of cells
+:param line_separator:
+:param value_separator:
+:param include_attributes: include attribute columns
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.build_element_unique_names">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">build_element_unique_names</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension_names</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_names</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hierarchy_names</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Generator</span><a class="headerlink" href="#TM1py.Utils.Utils.build_element_unique_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create tuple of unique names from dimension, hierarchy and elements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dimension_names</strong> – </p></li>
+<li><p><strong>element_names</strong> – </p></li>
+<li><p><strong>hierarchy_names</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Generator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.build_headers_from_cellset">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">build_headers_from_cellset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_cellset_as_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_header_dimensionality</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><a class="headerlink" href="#TM1py.Utils.Utils.build_headers_from_cellset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract dimension headers from cellset into dictionary of titles (slicers) and headers (row,column,page)
+* Title dimensions are in a single list of dicts
+* Header dimensions are a 2-dimensional list of the element dicts</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The first dimension in the header list is the axis</p></li>
+<li><p>The second dimension is the list of elements on the axis</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Dict format: {‘name’: ‘element or compound name’, ‘members’: [ {dict of dimension properties}, … ] }
+* Stacked headers on an axis will have a compount ‘name’ created by joining the member’s ‘Name’ properties with a ‘/’
+* Stacked headers will each be listed in the ‘memebers’ list; Single-element headers will only have one element in list</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_cellset_as_dict</strong> – raw data from TM1</p></li>
+<li><p><strong>force_header_dimensionality</strong> – An optional integer (1,2 or 3) to force headers array to be at least that long</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict : { titles: [ { ‘name’: ‘xx’, ‘members’: {} } ], headers: [axis][ { ‘name’: ‘xx’, ‘members’: {} } ] }</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.build_pandas_dataframe_from_cellset">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">build_pandas_dataframe_from_cellset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cellset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiindex</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">pandas.core.frame.DataFrame</span><a class="headerlink" href="#TM1py.Utils.Utils.build_pandas_dataframe_from_cellset" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cellset</strong> – </p></li>
+<li><p><strong>multiindex</strong> – True or False</p></li>
+<li><p><strong>sort_values</strong> – Boolean to control sorting in result DataFrame</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.build_ui_arrays_from_cellset">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">build_ui_arrays_from_cellset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_cellset_as_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_precision</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.build_ui_arrays_from_cellset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform raw 1,2 or 3-dimension cellset data into concise dictionary
+* Useful for grids or charting libraries that want an array of cell values per row
+* Returns 3-dimensional cell structure for tabbed grids or multiple charts
+* Rows and pages are dicts, addressable by their name. Proper order of rows can be obtained in headers[1]
+* Example ‘cells’ return format:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>‘cells’: {</dt><dd><dl class="simple">
+<dt>‘10100’: {</dt><dd><dl class="simple">
+<dt>‘Net Operating Income’: [ 19832724.72429739,</dt><dd><p>20365654.788303416,
+20729201.329183243,
+20480205.20121749],</p>
+</dd>
+<dt>‘Revenue’: [ 28981046.50724231,</dt><dd><p>29512482.207418434,
+29913730.038971487,
+29563345.9542385]},</p>
+</dd>
+</dl>
+</dd>
+<dt>‘10200’: {</dt><dd><dl class="simple">
+<dt>‘Net Operating Income’: [ 9853293.623709997,</dt><dd><p>10277650.763958748,
+10466934.096533755,
+10333095.839474997],</p>
+</dd>
+<dt>‘Revenue’: [ 13888143.710000003,</dt><dd><p>14300216.43,
+14502421.63,
+14321501.940000001]}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>},</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_cellset_as_dict</strong> – raw data from TM1</p></li>
+<li><p><strong>value_precision</strong> – Integer (optional) specifying number of decimal places to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict : { titles: [], headers: [axis][], cells: { Page0: { Row0: { [row values], Row1: [], …}, …}, …} }</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.build_ui_dygraph_arrays_from_cellset">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">build_ui_dygraph_arrays_from_cellset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_cellset_as_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_precision</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.build_ui_dygraph_arrays_from_cellset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform raw 1,2 or 3-dimension cellset data into dygraph-friendly format
+* Useful for grids or charting libraries that want an array of cell values per column
+* Returns 3-dimensional cell structure for tabbed grids or multiple charts
+* Example ‘cells’ return format:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>‘cells’: {</dt><dd><dl class="simple">
+<dt>‘10100’: [</dt><dd><p>[‘Q1-2004’, 28981046.50724231, 19832724.72429739],
+[‘Q2-2004’, 29512482.207418434, 20365654.788303416],
+[‘Q3-2004’, 29913730.038971487, 20729201.329183243],
+[‘Q4-2004’, 29563345.9542385, 20480205.20121749]],</p>
+</dd>
+<dt>‘10200’: [</dt><dd><p>[‘Q1-2004’, 13888143.710000003, 9853293.623709997],
+[‘Q2-2004’, 14300216.43, 10277650.763958748],
+[‘Q3-2004’, 14502421.63, 10466934.096533755],
+[‘Q4-2004’, 14321501.940000001, 10333095.839474997]]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>},</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_cellset_as_dict</strong> – raw data from TM1</p></li>
+<li><p><strong>value_precision</strong> – Integer (optional) specifying number of decimal places to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict : { titles: [], headers: [axis][], cells: { Page0: [  [column name, column values], [], … ], …} }</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.build_url_friendly_object_name">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">build_url_friendly_object_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.build_url_friendly_object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.case_and_space_insensitive_equals">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">case_and_space_insensitive_equals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item1</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item2</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#TM1py.Utils.Utils.case_and_space_insensitive_equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.cell_is_updateable">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">cell_is_updateable</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#TM1py.Utils.Utils.cell_is_updateable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function checks if the cell can be updated
+:param cell: dict cell including Updateable property
+:return: bool</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.dimension_hierarchy_element_tuple_from_unique_name">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">dimension_hierarchy_element_tuple_from_unique_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element_unique_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#TM1py.Utils.Utils.dimension_hierarchy_element_tuple_from_unique_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract dimension name, hierarchy name and element name from element unique name.
+Works with explicit and implicit hierarchy references.
+:param element_unique_name: e.g. [d1].[e1] or [d1].[leaves].[e1]
+:return: tuple of dimension name, hierarchy name, element name</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.dimension_name_from_element_unique_name">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">dimension_name_from_element_unique_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element_unique_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.dimension_name_from_element_unique_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.element_name_from_element_unique_name">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">element_name_from_element_unique_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element_unique_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.element_name_from_element_unique_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.element_names_from_element_unique_names">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">element_names_from_element_unique_names</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element_unique_names</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#TM1py.Utils.Utils.element_names_from_element_unique_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get tuple of simple element names from the full element unique names
+:param element_unique_names: tuple of element unique names ([dim1].[hier1].[elem1], … )
+:return: tuple of element names: (elem1, elem2, … )</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.extract_axes_from_cellset">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">extract_axes_from_cellset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_cellset_as_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">…</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#TM1py.Utils.Utils.extract_axes_from_cellset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.extract_cell_updateable_property">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">extract_cell_updateable_property</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decimal_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_property</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#TM1py.Utils.Utils.CellUpdateableProperty" title="TM1py.Utils.Utils.CellUpdateableProperty"><span class="pre">TM1py.Utils.Utils.CellUpdateableProperty</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#TM1py.Utils.Utils.extract_cell_updateable_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function converts passed decimal (integer) value to binary
+and extracts specified (cell_property) bit counting from the right.
+It will return TRUE if bit is set, and FALSE if bit is not set
+Each cell has ‘Updateable’ property - a decimal value, which needs to be converted to binary to get information
+about the cell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>decimal_value</strong> – int Decimal number</p></li>
+<li><p><strong>cell_property</strong> – CellUpdateableProperty enum property to extract from decimal value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.extract_element_names_from_members">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">extract_element_names_from_members</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">members</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#TM1py.Utils.Utils.extract_element_names_from_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract list of unique names from part of the cellset response
+in:
+[{‘UniqueName’: ‘[dim1].[dim1].[elem1]’, ‘Element’: {‘UniqueName’: ‘[dim1].[dim1].[elem1]’}},
+{‘UniqueName’: ‘[dim2].[dim2].[elem3]’, ‘Element’: {‘UniqueName’: ‘[dim2].[dim2].[elem3]’}}]
+out:
+[“elem1”, “elem3”]
+:param members: dictionary
+:return: list of unique names</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.extract_unique_names_from_members">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">extract_unique_names_from_members</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">members</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#TM1py.Utils.Utils.extract_unique_names_from_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract list of unique names from part of the cellset response
+in:
+[{‘UniqueName’: ‘[dim1].[dim1].[elem1]’, ‘Element’: {‘UniqueName’: ‘[dim1].[dim1].[elem1]’}},
+{‘UniqueName’: ‘[dim2].[dim2].[elem3]’, ‘Element’: {‘UniqueName’: ‘[dim2].[dim2].[elem3]’}}]
+out:
+[“[dim1].[dim1].[elem1]”, “[dim2].[dim2].[elem3]”]
+:param members: dictionary
+:return: list of unique names</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.format_url">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">format_url</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.format_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>build url and escape single quotes in args and kwargs
+:param url: url with {} placeholders
+:param args: arguments to placeholders
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.get_all_servers_from_adminhost">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">get_all_servers_from_adminhost</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adminhost</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><a class="headerlink" href="#TM1py.Utils.Utils.get_all_servers_from_adminhost" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.get_cube">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">get_cube</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.get_cube" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.get_dimensions_from_where_clause">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">get_dimensions_from_where_clause</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#TM1py.Utils.Utils.get_dimensions_from_where_clause" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.get_seconds_from_duration">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">get_seconds_from_duration</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_str</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#TM1py.Utils.Utils.get_seconds_from_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will convert the TM1 time to seconds
+:param time_str: P0DT00H01M43S
+:return: int</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.get_tm1_time_value_now">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">get_tm1_time_value_now</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_excel_serial_date</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="headerlink" href="#TM1py.Utils.Utils.get_tm1_time_value_now" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function can be used to replicate TM1’s NOW function
+to return current date/time value in serial number format.
+:param use_excel_serial_date: Boolean
+:return: serial number</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.hierarchy_name_from_element_unique_name">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">hierarchy_name_from_element_unique_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element_unique_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.hierarchy_name_from_element_unique_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.integerize_version">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">integerize_version</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#TM1py.Utils.Utils.integerize_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.lower_and_drop_spaces">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">lower_and_drop_spaces</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.lower_and_drop_spaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.require_admin">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">require_admin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.require_admin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.require_pandas">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">require_pandas</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.require_pandas" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.require_version">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">require_version</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Utils.Utils.require_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Higher order function to check required version for TM1py function</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.resembles_mdx">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">resembles_mdx</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#TM1py.Utils.Utils.resembles_mdx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.sort_coordinates">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">sort_coordinates</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cube_dimensions</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsorted_coordinates</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#TM1py.Utils.Utils.sort_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.verify_version">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">verify_version</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">required_version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#TM1py.Utils.Utils.verify_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="TM1py.Utils.Utils.wrap_in_curly_braces">
+<code class="sig-prename descclassname"><span class="pre">TM1py.Utils.Utils.</span></code><code class="sig-name descname"><span class="pre">wrap_in_curly_braces</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#TM1py.Utils.Utils.wrap_in_curly_braces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Put curly braces around a string
+:param expression:
+:return:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-TM1py.Utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-TM1py.Utils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TM1py</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Exceptions.html">TM1py.Exceptions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Objects.html">TM1py.Objects package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Services.html">TM1py.Services package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TM1py.Utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-TM1py.Utils.MDXUtils">TM1py.Utils.MDXUtils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tm1py-utils-tiobfuscator-module">TM1py.Utils.TIObfuscator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-TM1py.Utils.Utils">TM1py.Utils.Utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-TM1py.Utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="TM1py.Services.html" title="previous chapter">TM1py.Services package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Marius Wirtz, Cubewise CODE.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/TM1py.Utils.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

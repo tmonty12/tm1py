@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TM1py.Exceptions package &#8212; TM1py 1.0.2 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TM1py.Objects package" href="TM1py.Objects.html" />
+    <link rel="prev" title="TM1py Documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tm1py-exceptions-package">
+<h1>TM1py.Exceptions package<a class="headerlink" href="#tm1py-exceptions-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-TM1py.Exceptions.Exceptions">
+<span id="tm1py-exceptions-exceptions-module"></span><h2>TM1py.Exceptions.Exceptions module<a class="headerlink" href="#module-TM1py.Exceptions.Exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyException">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Exceptions.Exceptions.</span></code><code class="sig-name descname"><span class="pre">TM1pyException</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>The default exception for TM1py</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyNotAdminException">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Exceptions.Exceptions.</span></code><code class="sig-name descname"><span class="pre">TM1pyNotAdminException</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyNotAdminException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyRestException">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Exceptions.Exceptions.</span></code><code class="sig-name descname"><span class="pre">TM1pyRestException</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyRestException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#TM1py.Exceptions.Exceptions.TM1pyException" title="TM1py.Exceptions.Exceptions.TM1pyException"><code class="xref py py-class docutils literal notranslate"><span class="pre">TM1py.Exceptions.Exceptions.TM1pyException</span></code></a></p>
+<p>Exception for failing REST operations</p>
+<dl class="py method">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyRestException.headers">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">headers</span></code><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyRestException.headers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyRestException.reason">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">reason</span></code><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyRestException.reason" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyRestException.response">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">response</span></code><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyRestException.response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyRestException.status_code">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">status_code</span></code><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyRestException.status_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyTimeout">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Exceptions.Exceptions.</span></code><code class="sig-name descname"><span class="pre">TM1pyTimeout</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyTimeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyVersionException">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Exceptions.Exceptions.</span></code><code class="sig-name descname"><span class="pre">TM1pyVersionException</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyVersionException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyWriteFailureException">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Exceptions.Exceptions.</span></code><code class="sig-name descname"><span class="pre">TM1pyWriteFailureException</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statuses</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_log_files</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyWriteFailureException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#TM1py.Exceptions.Exceptions.TM1pyException" title="TM1py.Exceptions.Exceptions.TM1pyException"><code class="xref py py-class docutils literal notranslate"><span class="pre">TM1py.Exceptions.Exceptions.TM1pyException</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="TM1py.Exceptions.Exceptions.TM1pyWritePartialFailureException">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">TM1py.Exceptions.Exceptions.</span></code><code class="sig-name descname"><span class="pre">TM1pyWritePartialFailureException</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statuses</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_log_files</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attempts</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#TM1py.Exceptions.Exceptions.TM1pyWritePartialFailureException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#TM1py.Exceptions.Exceptions.TM1pyException" title="TM1py.Exceptions.Exceptions.TM1pyException"><code class="xref py py-class docutils literal notranslate"><span class="pre">TM1py.Exceptions.Exceptions.TM1pyException</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-TM1py.Exceptions">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-TM1py.Exceptions" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TM1py</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TM1py.Exceptions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-TM1py.Exceptions.Exceptions">TM1py.Exceptions.Exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-TM1py.Exceptions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Objects.html">TM1py.Objects package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Services.html">TM1py.Services package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TM1py.Utils.html">TM1py.Utils package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">TM1py Documentation</a></li>
+      <li>Next: <a href="TM1py.Objects.html" title="next chapter">TM1py.Objects package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Marius Wirtz, Cubewise CODE.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/TM1py.Exceptions.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
