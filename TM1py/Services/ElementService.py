@@ -350,19 +350,26 @@ class ElementService(ObjectService):
         :param attribute_value:
         :return: List of element names
         """
-        attribute_name = attribute_name.replace(" ", "")
+        if not self.exists(f"}}ElementAttributes_{dimension_name}",
+                f"}}ElementAttributes_{dimension_name}",
+                attribute_name):
+            raise RuntimeError(f"Attribute '{attribute_name}' does not exist in Dimension '{dimension_name}'")
+            
         if isinstance(attribute_value, str):
-            url = format_url("/api/v1/Dimensions('{}')/Hierarchies('{}')?$expand=Elements($filter = "
-                             "Attributes/{} eq '{}';$select=Name)",
-                             dimension_name, hierarchy_name, attribute_name, attribute_value)
-
+            mdx = (
+                f"{{FILTER({{TM1SUBSETALL([{dimension_name}].[{hierarchy_name}])}},"
+                f"[{dimension_name}].[{hierarchy_name}].[{attribute_name}] = \"{attribute_value}\")}}")
         else:
-            url = format_url("/api/v1/Dimensions('{}')/Hierarchies('{}')?$expand=Elements($filter = "
-                             "Attributes/{} eq {};$select=Name)",
-                             dimension_name, hierarchy_name, attribute_name, attribute_value)
+            mdx = (
+                f"{{FILTER({{TM1SUBSETALL([{dimension_name}].[{hierarchy_name}])}},"
+                f"[{dimension_name}].[{hierarchy_name}].[{attribute_name}] = {attribute_value})}}")
 
-        response = self._rest.GET(url, **kwargs)
-        return [elem['Name'] for elem in response.json()['Elements']]
+        elems =  self.execute_set_mdx(
+            mdx=mdx,
+            member_properties=["Name"],
+            parent_properties=None,
+            element_properties=None)
+        return [elem[0]["Name"] for elem in elems]
 
     def create_element_attribute(self, dimension_name: str, hierarchy_name: str, element_attribute: ElementAttribute,
                                  **kwargs) -> Response:

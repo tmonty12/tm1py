@@ -4,9 +4,11 @@ import functools
 import json
 import uuid
 import warnings
+import asyncio
 from collections import OrderedDict
 from io import StringIO
 from typing import List, Union, Dict, Iterable, Tuple, Optional
+from concurrent.futures.thread import ThreadPoolExecutor
 
 from mdxpy import MdxHierarchySet, MdxBuilder, Member
 from requests import Response
@@ -368,6 +370,50 @@ class CellService(ObjectService):
                           use_changeset=use_changeset,
                           **kwargs)
 
+    @require_pandas
+    @manage_transaction_log
+    def write_dataframe_async(self, cube_name: str, data: 'pd.DataFrame',
+                              slice_size_of_dataframe: int, max_workers: int,
+                              increment: bool = False):
+        """ Write DataFrame into a cube using unbound TI processes in a multi-threading way. Requires admin permissions.
+        For a DataFrame with > 1,000,000 rows, this function will at least save half of runtime compared with `write_dataframe` function.
+        Column order must match dimensions in the target cube with an additional column for the values.
+        Column names are not relevant.
+        :param cube_name:
+        :param data: Pandas Data Frame
+        :param slice_size_of_dataframe: Number of rows for each DataFrame slice, e.g. 10000
+        :param max_workers: Max number of threads, e.g. 14
+        :param increment: increment or update cell values. Defaults to False.
+        :return: the Future’s result or raise exception.
+        """
+        if not isinstance(data, pd.DataFrame):
+            raise ValueError("argument 'data' must of type DataFrame")
+
+        dimensions = self.get_dimension_names_for_writing(cube_name=cube_name)
+
+        if not len(data.columns) == len(dimensions) + 1:
+            raise ValueError("Number of columns in 'data' DataFrame must be number of dimensions in cube + 1")
+
+        def chunks(data):
+            return [data.iloc[i:i + slice_size_of_dataframe] for i in range(0, data.shape[0], slice_size_of_dataframe)]
+
+        def write(self, chunk):
+            return self.write_dataframe(cube_name=cube_name, data=chunk, increment=increment, use_ti=True)
+
+        async def write_async(self, data):
+            loop = asyncio.get_event_loop()
+            outcomes = []
+
+            with ThreadPoolExecutor(max_workers) as executor:
+                futures = [loop.run_in_executor(executor, write, self, chunk) for chunk in chunks(data)]
+
+                for future in futures:
+                    outcomes.append(await future)
+
+            return outcomes
+            
+        return asyncio.run(write_async(self, data))
+
     def write_value(self, value: Union[str, float], cube_name: str, element_tuple: Iterable,
                     dimensions: Iterable[str] = None, sandbox_name: str = None, **kwargs) -> Response:
         """ Write value into cube at specified coordinates
@@ -689,8 +735,8 @@ class CellService(ObjectService):
 
     def execute_mdx(self, mdx: str, cell_properties: List[str] = None, top: int = None, skip_contexts: bool = False,
                     skip: int = None, skip_zeros: bool = False, skip_consolidated_cells: bool = False,
-                    skip_rule_derived_cells: bool = False, sandbox_name: str = None,
-                    **kwargs) -> CaseAndSpaceInsensitiveTuplesDict:
+                    skip_rule_derived_cells: bool = False, sandbox_name: str = None, element_unique_names: bool = True,
+                    values_only: bool = False, **kwargs) -> CaseAndSpaceInsensitiveTuplesDict:
         """ Execute MDX and return the cells with their properties
 
         :param mdx: MDX Query, as string
@@ -702,6 +748,8 @@ class CellService(ObjectService):
         :param skip_consolidated_cells: skip consolidated cells in cellset
         :param skip_rule_derived_cells: skip rule derived cells in cellset
         :param sandbox_name: str
+        :param element_unique_names: '[d1].[h1].[e1]' or 'e1'
+        :param values_only: cell values in result dictionary, instead of cell_properties dictionary
         :return: content in sweet concise structure.
         """
         cellset_id = self.create_cellset(mdx=mdx, sandbox_name=sandbox_name, **kwargs)
@@ -716,12 +764,14 @@ class CellService(ObjectService):
             skip_rule_derived_cells=skip_rule_derived_cells,
             delete_cellset=True,
             sandbox_name=sandbox_name,
+            element_unique_names=element_unique_names,
+            values_only=values_only,
             **kwargs)
 
     def execute_view(self, cube_name: str, view_name: str, private: bool = False, cell_properties: Iterable[str] = None,
                      top: int = None, skip_contexts: bool = False, skip: int = None, skip_zeros: bool = False,
                      skip_consolidated_cells: bool = False, skip_rule_derived_cells: bool = False,
-                     sandbox_name: str = None,
+                     sandbox_name: str = None, element_unique_names: bool = True, values_only: bool = False,
                      **kwargs) -> CaseAndSpaceInsensitiveTuplesDict:
         """ get view content as dictionary with sweet and concise structure.
             Works on NativeView and MDXView !
@@ -737,8 +787,9 @@ class CellService(ObjectService):
         :param skip_zeros: skip zeros in cellset (irrespective of zero suppression in MDX / view)
         :param skip_consolidated_cells: skip consolidated cells in cellset
         :param skip_rule_derived_cells: skip rule derived cells in cellset
+        :param element_unique_names: '[d1].[h1].[e1]' or 'e1'
         :param sandbox_name: str
-
+        :param values_only: cell values in result dictionary, instead of cell_properties dictionary
         :return: Dictionary : {([dim1].[elem1], [dim2][elem6]): {'Value':3127.312, 'Ordinal':12}   ....  }
         """
         cellset_id = self.create_cellset_from_view(cube_name=cube_name, view_name=view_name, private=private,
@@ -754,6 +805,8 @@ class CellService(ObjectService):
             skip_rule_derived_cells=skip_rule_derived_cells,
             delete_cellset=True,
             sandbox_name=sandbox_name,
+            element_unique_names=element_unique_names,
+            values_only=values_only,
             **kwargs)
 
     def execute_mdx_raw(
@@ -1830,6 +1883,8 @@ class CellService(ObjectService):
             skip_consolidated_cells: bool = False,
             skip_rule_derived_cells: bool = False,
             sandbox_name: str = None,
+            element_unique_names: bool = True,
+            values_only: bool = False,
             **kwargs) -> CaseAndSpaceInsensitiveTuplesDict:
         """ Execute cellset and return the cells with their properties
 
@@ -1843,7 +1898,9 @@ class CellService(ObjectService):
         :param skip_consolidated_cells: skip consolidated cells in cellset
         :param skip_rule_derived_cells: skip rule derived cells in cellset
         :param sandbox_name: str
-        :return: Content in sweet consice strcuture.
+        :param element_unique_names: '[d1].[h1].[e1]' or 'e1'
+        :param values_only: cell values in result dictionary, instead of cell_properties dictionary
+        :return: Content in sweet concise strcuture.
         """
         if not cell_properties:
             cell_properties = ['Value']
@@ -1861,11 +1918,14 @@ class CellService(ObjectService):
             skip_consolidated_cells=skip_consolidated_cells,
             skip_rule_derived_cells=skip_rule_derived_cells,
             sandbox_name=sandbox_name,
+            include_hierarchies=False,
             **kwargs)
 
         return Utils.build_content_from_cellset_dict(
             raw_cellset_as_dict=raw_cellset,
-            top=top)
+            top=top,
+            element_unique_names=element_unique_names,
+            values_only=values_only)
 
     def create_cellset(self, mdx: str, sandbox_name: str = None, **kwargs) -> str:
         """ Execute MDX in order to create cellset at server. return the cellset-id
