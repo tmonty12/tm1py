@@ -6,10 +6,10 @@ https://github.com/cubewise-code/TM1py
 TM1py wraps the TM1 REST API into concise Python classes and Services that simplify TM1 interactions from python.
 
 Usage:
->>> with RestService(address='', port=8001, user='admin', password='apple', ssl=False) as tm1_rest:
->>>     subset_service = SubsetService(tm1_rest)
->>>     subset = Subset(dimension_name='Month', subset_name='Q1', elements=['Jan', 'Feb', 'Mar'])
->>>     subset_service.create(subset, private=True)
+# >>> with RestService(address='', port=8001, user='admin', password='apple', ssl=False) as tm1_rest:
+# >>>     subset_service = SubsetService(tm1_rest)
+# >>>     subset = Subset(dimension_name='Month', subset_name='Q1', elements=['Jan', 'Feb', 'Mar'])
+# >>>     subset_service.create(subset, private=True)
 
 """
 

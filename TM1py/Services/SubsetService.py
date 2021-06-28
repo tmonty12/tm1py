@@ -84,12 +84,8 @@ class SubsetService(ObjectService):
         :return: response
         """
         if subset.is_static:
-            self.delete_elements_from_static_subset(
-                dimension_name=subset.dimension_name,
-                hierarchy_name=subset.hierarchy_name,
-                subset_name=subset.name,
-                private=private,
-                **kwargs)
+            return self.update_static_subset(subset, private, **kwargs)
+
         subsets = "PrivateSubsets" if private else "Subsets"
         url = format_url(
             "/api/v1/Dimensions('{}')/Hierarchies('{}')/{}('{}')",
@@ -169,16 +165,22 @@ class SubsetService(ObjectService):
             dimension_name, hierarchy_name, subset_type, subset_name)
         return self._exists(url, **kwargs)
 
-    def delete_elements_from_static_subset(self, dimension_name: str, hierarchy_name: str, subset_name: str,
-                                           private: bool, **kwargs) -> Response:
+    def delete_elements_from_static_subset(self, elements: list[str], dimension_name: str, hierarchy_name: str, subset_name: str,
+                                           private: bool = False, **kwargs) -> Response:
+        if not hierarchy_name: hierarchy_name = dimension_name
         subsets = "PrivateSubsets" if private else "Subsets"
-        url = format_url(
-            "/api/v1/Dimensions('{}')/Hierarchies('{}')/{}('{}')/Elements/$ref",
-            dimension_name, hierarchy_name, subsets, subset_name)
-        return self._rest.DELETE(url=url, **kwargs)
+        for element_name in elements:
+            url = format_url(
+                "/api/v1/Dimensions('{}')/Hierarchies('{}')/{}('{}')/Elements('{}')",
+                dimension_name, hierarchy_name, subsets, subset_name, element_name)
+            
+            response = self._rest.DELETE(url=url, **kwargs)
+            if response.status_code != 204: return response
+        return response
+        
 
     def get_element_names(self, dimension_name: str, hierarchy_name: str, subset_name: str, private: bool = False,
-                          **kwargs):
+                          **kwargs) -> List[str]:
         """ Get elements from existing (dynamic or static) subset
 
         :param dimension_name:
@@ -202,3 +204,29 @@ class SubsetService(ObjectService):
             parent_properties=None,
             **kwargs)
         return [entry[0]["Name"] for entry in tuples]
+
+    def update_static_subset(self, subset, private, **kwargs) -> Subset:
+        original_subset = self.get(subset_name=subset.name, dimension_name=subset.dimension_name, 
+                                    hierarchy_name=subset.hierarchy_name, private=private, **kwargs)
+    
+        for element in subset.elements:
+            if element in original_subset.elements:
+                subset.elements.remove(element)
+        
+        elements_to_be_deleted = []
+        for element in original_subset.elements:
+            if element not in subset.elements:
+                elements_to_be_deleted.append(element)
+
+        response = self.delete_elements_from_static_subset(elements_to_be_deleted, dimension_name=subset.dimension_name, 
+                                                hierarchy_name=subset.hierarchy_name, subset_name=subset.name, private=private)
+        if response.status_code != 204: return response
+        
+        subsets = "PrivateSubsets" if private else "Subsets"
+        url = format_url(
+            "/api/v1/Dimensions('{}')/Hierarchies('{}')/{}('{}')",
+            subset.dimension_name, subset.hierarchy_name, subsets, subset.name)
+        return self._rest.PATCH(url=url, data=subset.body, **kwargs)
+        
+
+
